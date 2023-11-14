@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
-//import { Provider } from "../../books/src/context/books";
+import { Provider } from "./context/PostsContext";
 
 const el = document.getElementById('root');
 const root = ReactDOM.createRoot(el);
 
 root.render(
-    //<Provider>
+    <Provider>
         <App/>
-    //</Provider>
+    </Provider>
 )
