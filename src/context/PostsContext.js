@@ -14,7 +14,7 @@ function Provider( { children } ){
         const postsDataContainer = await axios.get(baseURL + "posts");
         //console.log("Posts container was: ", postsDataContainer);
         const posts = postsDataContainer.data;
-        //console.log("First book was: ", posts[0]);
+        console.log("First post was: ", posts[0]);
         setPosts(posts);
     }
 
@@ -26,17 +26,19 @@ function Provider( { children } ){
     
     const fetchPostsByUserId = async (userId) => {
         //useId = 1;
-        const userSearchString = "posts?userId=" + useId;
+        const userSearchString = "posts?userId=" + userId;
         const postsDataContainer = await axios.get(baseURL + userSearchString);
         //console.log("Search posts by user container: ", postsDataContainer);
         const userPosts = postsDataContainer.data;
         console.log("Posts: ", userPosts);
+        setUserPosts(userPosts);
     }
 
     const deletePostById = async (postId) => {
-        const deleteURL = "posts?postId=";
-        const deletePostRequest = await axios.delete(baseURL + deleteURL);
-        console.log("Delete request got: ", deletePostRequest);
+        const deleteURL = "posts/" + postId;
+        const deletePostRequest = await axios.delete(baseURL + deleteURL );
+        const deletTest = await axios.delete('http://localhost:5000/posts/1')
+        console.log("Delete request got: ", deletTest);
     }
 
 
@@ -47,7 +49,8 @@ function Provider( { children } ){
     const valuesToShare = {
         fetchAllPosts,
         fetchAllCategories,
-        fetchPostsByUserId
+        fetchPostsByUserId,
+        deletePostById
     }
 
     return (

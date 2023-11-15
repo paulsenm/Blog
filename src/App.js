@@ -7,11 +7,13 @@ function App(){
     const {fetchAllPosts} = useContext(PostsContext);
     const {fetchAllCategories} = useContext(PostsContext);
     const {fetchPostsByUserId} = useContext(PostsContext);
+    const {deletePostById} = useContext(PostsContext);
 
     useEffect(() => {
-        fetchAllPosts();
-        fetchAllCategories();
-        fetchPostsByUserId();
+        // fetchAllPosts();
+        // fetchAllCategories();
+        // fetchPostsByUserId('1');
+        //deletePostById();
     }, []);
     return (
         <div>
