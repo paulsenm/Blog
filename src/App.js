@@ -12,7 +12,7 @@ function App(){
     useEffect(() => {
         // fetchAllPosts();
         // fetchAllCategories();
-        // fetchPostsByUserId('1');
+        fetchPostsByUserId('1');
         //deletePostById();
     }, []);
     return (

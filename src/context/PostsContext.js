@@ -41,6 +41,12 @@ function Provider( { children } ){
         console.log("Delete request got: ", deletTest);
     }
 
+    const editPostById = async (postId, newPost) => {
+        console.log("Edit post called");
+        console.log("Post ID was: ", postId);
+        console.log("Post content was: ", newPost);
+    }
+
 
 
 
